@@ -1,9 +1,10 @@
 # // script on gem website, slow to not be detected
 # // find all instances of country
 # // switch all html instances of country to country/area
-import requests
-from bs4 import BeautifulSoup
-from urllib.parse import urljoin
+# import requests
+# from bs4 import BeautifulSoup
+# from urllib.parse import urljoin
+import pandas as pd
 
 
 # Base URL of the website
@@ -54,16 +55,29 @@ def scrape_page(url):
         print(f"Failed to scrape {url}: {e}")
         return []
 
-# Start scraping from the main page
-to_visit = [base_url]
+# # Start scraping from the main page
+# to_visit = [base_url]
 
-# Loop through pages to visit
-while to_visit:
-    current_url = to_visit.pop(0)
-    if current_url not in visited_urls:
-        new_links = scrape_page(current_url)
-        to_visit.extend(new_links)
+# # Loop through pages to visit
+# while to_visit:
+#     current_url = to_visit.pop(0)
+#     if current_url not in visited_urls:
+#         new_links = scrape_page(current_url)
+#         to_visit.extend(new_links)
 
-# Output the results
-for page_url, count in found_instances:
-    print(f"Found '{search_string}' {count} times on: {page_url}")
+# # Output the results
+# for page_url, count in found_instances:
+#     print(f"Found '{search_string}' {count} times on: {page_url}")
+
+
+
+
+myname = 'Taylor'
+yourname = 'Stacy'
+
+def add_names_together(name1, name2):
+    final_name = name1 + name2
+    print(final_name)
+    return final_name
+
+add_names_together(myname, yourname)
